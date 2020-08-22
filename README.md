@@ -6,6 +6,9 @@ It is accomplished by two major steps:
   - Train your own model
   - Deploy your Gradio app on Heroku
 
+Try the app: (Please allow a few seconds to start the server)
+https://boiling-river-49417.herokuapp.com
+
 ### Setup
 
 Python 3.5+ is required for compatability with all required modules
