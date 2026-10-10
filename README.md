@@ -6,6 +6,24 @@ This repository brings together two implementations of the same demonstration: d
 
 **Historical demonstration; runtime unverified.** Training, local execution, and current hosted availability have not been verified. The checked-in dependencies and deployment files are legacy context. See the [Gradio setup and deployment notes](docs/legacy-setup.md) or the [CGI variant guide](legacy/README.md) for the preserved workflows. The two dependency stacks remain separate.
 
+## Project background
+
+- **2017–2019: custom browser and CGI application.** The earlier application builds on [rhammell/mnist-draw](https://github.com/rhammell/mnist-draw), whose retained July 2017 commits contain the TFLearn CNN and browser interface. Gawain's `mnist-draw` repository was created in January 2019. Its January 31 adaptation commit, recorded under `gawainchin1`, adds OpenCV resizing to 28 × 28 before inference and bundles MNIST data; the original CNN and interface remain credited to the upstream project.
+- **2020: Keras and Gradio implementation.** The Gradio repository was created on August 22, 2020. Gawain Chin's implementation commit that day records a Keras `Flatten → Dense(128) → Dense(10)` model, Gradio drawing/results components, and Heroku process configuration. This changes both the model definition and the interface/deployment stack.
+- **Consolidation: one portfolio repository.** Both variants now live here, with the legacy files unchanged and all 25 original legacy commits retained. The shared story documents the implementation choices and their history; runtime and model-quality comparisons remain unverified.
+
+The [history notes](docs/history.md) record the repository dates and commit evidence behind this background.
+
+## Historical interface example
+
+This is the original animation embedded in the legacy application's README, showing its custom canvas and classification chart. The external URL is preserved exactly; its current availability has not been revalidated. It illustrates the historical CGI variant, not a verified current deployment or the later Gradio interface.
+
+<p>
+<img src="http://i.imgur.com/fmIa0e5.gif" width="600" alt="Original historical MNIST Draw CGI interface animation">
+</p>
+
+[Original animation link](http://i.imgur.com/fmIa0e5.gif) · [Unchanged original README](legacy/mnist-draw/README.md)
+
 ## Two implementations, one project story
 
 | Aspect | Earlier CGI variant: `legacy/mnist-draw/` | Later Gradio variant: repository root |

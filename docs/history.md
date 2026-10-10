@@ -11,6 +11,27 @@ This repository consolidates the two MNIST Draw implementations into one portfol
 
 The earlier application is a modified version of [rhammell/mnist-draw](https://github.com/rhammell/mnist-draw), as credited in the imported [original README](../legacy/mnist-draw/README.md). Its history includes upstream commits by Bob Hammell. The later implementation's checked-in model definition, interface, and deployment files differ from that legacy application; this documentation makes no claim of exclusive authorship of the original concept or a measured improvement in model quality.
 
+## Evolution evidence
+
+The README's background is grounded in GitHub repository creation metadata and the preserved commit records:
+
+| Stage | Recorded evidence | Observable change |
+| --- | --- | --- |
+| Upstream application, July 2017 | Bob Hammell's `1e4497e67f211bd9a2a3dcc226fd5076d5b055b6`, dated July 11, 2017 | Adds the custom browser application, TFLearn CNN, training script, and CGI inference handler |
+| Gawain's earlier repository, January 2019 | Repository created January 31, 2019; `56e2d47afe516bc6683d242e716b7e8e330b620d`, authored as `gawainchin1` that day | Adds OpenCV resizing to 28 × 28 in the CGI inference path and the four compressed MNIST files, alongside other uploaded changes |
+| Gradio implementation, August 2020 | Repository created August 22, 2020; `97282cf45f78b8ad45307d8f368475549e8932dd`, authored by Gawain Chin that day | Records the Keras Flatten/Dense model definition, Gradio app, model artifacts, dependencies, and Heroku process files |
+| Consolidation | Unsquashed subtree merge `1651bf2e186fc63f4effcfa1fb504a335c87cb07` | Places the unchanged earlier snapshot under the legacy prefix while retaining its original ancestry |
+
+The imported history predates the creation of Gawain's earlier GitHub repository; those upstream dates should not be read as the creation date of his repository or as his authorship of the original CNN/interface. The commit evidence describes checked-in changes, not their motivation, originality, measured accuracy, or successful deployment. The later model definition is a dense network, separate from the legacy CNN.
+
+These records can be inspected without running the applications:
+
+```bash
+git show --stat 1e4497e67f211bd9a2a3dcc226fd5076d5b055b6
+git show 56e2d47afe516bc6683d242e716b7e8e330b620d -- cgi-bin/mnist.py
+git show --stat 97282cf45f78b8ad45307d8f368475549e8932dd
+```
+
 All 19 files from the earlier published snapshot are imported unchanged, including its original README, dependency encoding, TFLearn model artifacts, compressed MNIST data, vendored browser asset, and tracked Python bytecode. The later variant's original source, dependency, deployment, and model files remain unchanged. Neither source snapshot includes a repository-level LICENSE file. Existing files and any notices are preserved; consolidation does not assign a new license.
 
 ## Original Git history
@@ -36,6 +57,8 @@ To preserve this ancestry when publishing the consolidation, use a **merge commi
 
 ## Historical links and repository context
 
-The unchanged imported README retains its original clone/setup URLs, TFLearn documentation URL, and external Imgur animation. Treat those instructions as historical source material; the [legacy guide](../legacy/README.md) gives the consolidated clone location and working directories. The [Gradio setup notes](legacy-setup.md) retain the historical Heroku URL with its current availability unverified. Original CDN dependencies remain unchanged.
+The unchanged imported README retains its original clone/setup URLs, TFLearn documentation URL, and external Imgur animation at `http://i.imgur.com/fmIa0e5.gif`. The [canonical overview](../README.md) also embeds that exact URL as a labeled historical CGI interface example. Neither source snapshot contains a standalone tracked screenshot or animation file, and the original Gradio README has no image embed. The animation's current availability remains unverified; no replacement screenshot or unrelated image has been added.
+
+Treat the imported setup instructions as historical source material; the [legacy guide](../legacy/README.md) gives the consolidated clone location and working directories. The [Gradio setup notes](legacy-setup.md) retain the historical Heroku URL with its current availability unverified. Original CDN dependencies remain unchanged.
 
 Original repository URLs remain provenance references. Importing Git commits does not migrate GitHub issues, PRs, releases, stars, permissions, or other service metadata, and does not redirect existing links. Whether the predecessor repository is retained, archived, or deleted is a separate decision; consolidation itself does not change either remote's state.
