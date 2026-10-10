@@ -1,6 +1,8 @@
 # Legacy setup and deployment notes
 
-**Historical reference; runtime unverified.** These notes preserve the original installation, training, and Heroku workflow. They have not been tested against a current Python environment, current package releases, or a current Heroku service. Return to the [portfolio overview](../README.md) for the relationship to the earlier implementation.
+**Historical reference; runtime unverified.** These notes preserve the original Gradio installation, training, and Heroku workflow. They have not been tested against a current Python environment, current package releases, or a current Heroku service. Return to the [portfolio overview](../README.md), or see the separate [CGI variant guide](../legacy/README.md).
+
+Run the Gradio commands from the repository root in its own environment. The app loads `./model/mnist_tf2.h5`, and the training script writes under `./model/`. Use the root [requirements.txt](../requirements.txt) for this variant; the TFLearn requirements under `legacy/mnist-draw/` belong to a separate stack and are not combined with it.
 
 ## Original setup
 
